@@ -11,15 +11,16 @@ using namespace std;
 	  {
 		  for (size_t j = 0; j < length ; ++j)
 		  {
-			  if (j == i)continue;
+			  if (j == i)continue;  //跳过同一个数
 			  else if (str[i] == str[j]) 
 			  {
-				  break;
+				  break;            //一样的话跳过
 			  }
-			  else if (j == length - 1)
+			  else if (j == length - 1)    //到最后都不一样的话存储
 			  {
 				  result = str[i];
 			  }
+			  //最后一位跟谁都不一样的话直接输出
 			  else if (i == length - 1 && j == length - 2) {
 				  result = str[i];
 				  return result;
@@ -31,7 +32,7 @@ using namespace std;
 
  int main(){
 
-	 cout << "Result:" << getLastUniqueElement("abbcbfcad") << endl;
-     getchar();
+     cout << "Result:" << getLastUniqueElement("abbcbfcad") << endl;
      return 0;
  }
+
